@@ -1,0 +1,145 @@
+{% extends 'web/main.html' %}
+{% block title %}<title>About | Professional Sound</title>{% endblock %}
+{% block content %}
+
+<div class="body__overlay"></div>
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area"
+     style="background: rgba(0, 0, 0, 0) url(static/web/images/bg/100.jpg) no-repeat scroll center center / cover ;">
+    <div class="ht__bradcaump__wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">About Us</h2>
+                        <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb-item active">About Us</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- Start Our Store Area -->
+<section class="htc__store__area ptb--120 bg__white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section__title section__title--2 text-center">
+                    <h2 class="title__line">Welcome To Uniqlo Store</h2>
+                    <p>Avante Audio is a professional audio brand born from a passion for excellence in sound
+                        reproduction. Avante believes in producing high-end products – that offer both sonic and
+                        aesthetic beauty – at attainable prices in order to provide the greatest possible audio
+                        experience for its users. A division of the ADJ Group of Companies, Avante Audio is an
+                        independent business unit focused on developing, manufacturing and marketing innovative
+                        professional audio equipment.
+
+                        Created for musicians and bands, houses of worship, audio production companies, rental houses,
+                        and system integrators, Avante Audio’s Achromic Series is a complete range of active loudspeaker
+                        cabinets that offer powerful output, detailed audio clarity, built-in DSP and sleek exterior
+                        designs. Meanwhile, the new Imperio mini line array system demonstrates Avante Audio’s
+                        commitment to audio innovation, offering a flexible modular design that can be easily deployed
+                        in a variety of configurations including flown and ground-stacked setups. This makes the system
+                        ideal both for installation in medium-sized venues that aren’t large enough to warrant a
+                        traditional full-size array system as well as for use by production companies looking for a
+                        flexible active speaker system that can be deployed in various arrangements to suit a wide
+                        variety of different applications. The Avante range also offers compact and portable audio
+                        products, such as the new AS8 column system, that are ideal for gigging duos and solo musicians
+                        as well as mobile entertainers.</p>
+                </div>
+                <div class="store__btn">
+                    <a href="{% url 'contact' %}">contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Our Store Area -->
+<!-- Start Choose Us Area -->
+<section class="htc__choose__us__ares bg__white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <div class="htc__choose__wrap bg__cat--4">
+                    <h2 class="choose__title">Why Choose Us?</h2>
+                    <div class="choose__container">
+                        <div class="single__chooose">
+                            <div class="choose__us">
+                                <div class="choose__icon">
+                                    <span class="ti-heart"></span>
+                                </div>
+                                <div class="choose__details">
+                                    <h4>Free Gift Box</h4>
+                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                </div>
+                            </div>
+                            <div class="choose__us">
+                                <div class="choose__icon">
+                                    <span class="ti-truck"></span>
+                                </div>
+                                <div class="choose__details">
+                                    <h4>Free Delivery</h4>
+                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__chooose">
+                            <div class="choose__us">
+                                <div class="choose__icon">
+                                    <span class="ti-reload"></span>
+                                </div>
+                                <div class="choose__details">
+                                    <h4>Money Back</h4>
+                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                </div>
+                            </div>
+                            <div class="choose__us">
+                                <div class="choose__icon">
+                                    <span class="ti-time"></span>
+                                </div>
+                                <div class="choose__details">
+                                    <h4>Support 24/7</h4>
+                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start brand Area -->
+<div class="htc__brand__area bg__white ptb--120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="brand__list">
+                    <li><a href="#">
+                        <img src="static/web/images/brand/av.png" alt="brand images">
+                    </a></li>
+                    <li><a href="#">
+                        <img src="static/web/images/brand/au.png" alt="brand images">
+                    </a></li>
+                    <li><a href="#">
+                        <img src="static/web/images/brand/s.png" alt="brand images">
+                    </a></li>
+                    <li><a href="#">
+                        <img src="static/web/images/brand/br.png" alt="brand images">
+                    </a></li>
+                    <li class="hidden-sm"><a href="#">
+                        <img src="static/web/images/brand/h.png" alt="brand images">
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End brand Area -->
+
+{% endblock %}
