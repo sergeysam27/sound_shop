@@ -1,0 +1,48 @@
+{% extends 'web/main.html' %}
+{% block title %}<title>Login | Professional Sound</title>{% endblock %}
+{% block content %}
+
+<div class="body__overlay"></div>
+
+<!-- Start Login Area -->
+<div class="htc__login__register bg__white ptb--130"
+     style="background: rgba(0, 0, 0, 0) url(static/web/images/bg/123.png) no-repeat scroll center center / cover ;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-4 col-lg-offset-4 col-md-4 offset-md-4">
+                <ul class="login__register__menu" role="tablist">
+                    <li role="presentation" class="login active"><a href="#login" role="tab" data-toggle="tab">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="row">
+            <div class="col-12 col-lg-4 col-lg-offset-4 col-md-4 offset-md-4">
+                Hello, {{ user.username }}!
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-12 col-lg-4 col-lg-offset-4 col-md-4 offset-md-4">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <label class="form-label" for="id_username">Логин</label>
+                    <input type="text" class="form-input" id="id_username"
+                           name="username" placeholder="Login" required>
+                    <label class="form-label" for="id_password">Пароль</label>
+                    <input type="password" class="form-input" id="id_password"
+                           name="password" placeholder="Password" required>
+                    <button type="submit" class="request-quote-btn">LogIn</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+
+        <!-- End Login Content -->
+    </div>
+</div>
+<!-- End Login Area -->
+{% endblock %}
