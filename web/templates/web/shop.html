@@ -1,0 +1,83 @@
+{% extends 'web/main.html' %}
+{% block title %}<title>Shop | Professional Sound</title>{% endblock %}
+{% block content %}
+<div class="body__overlay"></div>
+
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area"
+     style="background: rgba(0, 0, 0, 0) url(static/web/images/bg/100.jpg) no-repeat scroll center center / cover ;">
+    <div class="ht__bradcaump__wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Shop Page</h2>
+                        <nav class="bradcaump-inner">
+                            <a class="breadcrumb-item" href="{% url 'index' %}">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb-item active">Shop Page</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- Start Our Product Area -->
+<section class="htc__product__area shop__page ptb--130 bg__white">
+    <div class="container">
+        <div class="htc__product__container">
+
+
+            <div class="row">
+                <div class="product__list">
+                    <!-- Start Single Product -->
+                    {% for product in object_list %}
+                    <div class="col-12 col-lg-4 col-md-6 item">
+                        <div class="card" style="width: 18rem;">
+                            <form method="post" action="{% url 'add_item_to_cart' product.pk %}">
+                                <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>{{ product.name}}</b></h5>
+                                    <p class="card-text">
+                                        {{ product.description }}
+                                    </p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Price: ${{ product.price }}</li>
+                                    <li class="list-group-item">
+                                        {% csrf_token %}
+                                        <label class="form-label" for="id_quantity">Quantity:</label>
+                                        <input type="number" name="quantity" value="1" min="1"
+                                               required id="id_quantity"/>
+                                    </li>
+                                </ul>
+                                <div class="card-body">
+                                    <button class="learn-more-btn" type="submit"> Buy now</button>
+                                    <a class="contactus-bar-btn f_right" href="{% url 'product' product.pk %}">
+                                        Detail </a>
+                                    <br><br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- End Single Product -->
+
+                </div>
+            </div>
+            <!-- Start Load More BTn -->
+            <div class="row mt--60">
+                <div class="col-md-12">
+                    <div class="htc__loadmore__btn">
+                        <a href="#">load more</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Load More BTn -->
+        </div>
+    </div>
+</section>
+<!-- End Our Product Area -->
+{% endblock %}

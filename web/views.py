@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 
 from web.forms import LoginForm, RegisterForm
+from web.models import Product
 
 
 def index(request):
@@ -19,6 +20,16 @@ def contact(request):
 
 def shop(request):
     return render(request, 'web/shop.html')
+
+
+class ProductsListView(ListView):
+    model = Product
+    template_name = 'web/shop.html'
+
+
+class ProductsDetailView(DetailView):
+    model = Product
+    template_name = 'web/product-details.html'
 
 
 def login_user(request):
